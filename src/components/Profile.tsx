@@ -1,54 +1,64 @@
-import html from "../img/html.png";
-import css from "../img/css.png";
-import javascript from "../img/javascript.png";
-import node from "../img/node.png";
-import react from "../img/react.png";
-import tailwind from "../img/tailwind.png";
-import bootstrap from "../img/bootstrap.png";
 import downArrow from "../img/down-arrow.png";
+
+import {
+  TbBrandReactNative as ReactIcon,
+  TbBrandTailwind as TailwindIcon,
+  TbBrandHtml5 as HTMLIcon,
+  TbBrandCss3 as CSSIcon,
+  TbBrandJavascript as JavascriptIcon,
+  TbBrandTypescript as TypescriptIcon,
+  TbBrandSupabase as SupabaseIcon,
+  TbBrandNextjs as NextIcon,
+} from "react-icons/tb";
 
 const list = [
   {
     id: 1,
-    name: "html",
-    href: html,
-    alt: "html",
-  },
-  {
-    id: 2,
-    name: "css",
-    href: css,
-    alt: "css",
-  },
-  {
-    id: 3,
-    name: "javascript",
-    href: javascript,
-    alt: "javascript",
-  },
-  {
-    id: 4,
-    name: "node",
-    href: node,
-    alt: "node",
-  },
-  {
-    id: 5,
-    name: "react",
-    href: react,
+    name: "React",
+    icon: <ReactIcon size={"max"} />,
     alt: "react",
   },
   {
-    id: 6,
-    name: "tailwind",
-    href: tailwind,
+    id: 2,
+    name: "NextJS",
+    icon: <NextIcon size={"max"} />,
+    alt: "nextjs",
+  },
+  {
+    id: 2,
+    name: "Tailwind",
+    icon: <TailwindIcon size={"max"} />,
     alt: "tailwind",
   },
   {
+    id: 3,
+    name: "HTML",
+    icon: <HTMLIcon size={"max"} />,
+    alt: "html",
+  },
+  {
+    id: 4,
+    name: "CSS",
+    icon: <CSSIcon size={"max"} />,
+    alt: "css",
+  },
+  {
+    id: 5,
+    name: "Javascript",
+    icon: <JavascriptIcon size={"max"} />,
+    alt: "javascript",
+  },
+  {
+    id: 6,
+    name: "Typescript",
+    icon: <TypescriptIcon size={"max"} />,
+    alt: "typescript",
+  },
+  {
     id: 7,
-    name: "bootstrap",
-    href: bootstrap,
-    alt: "bootstrap",
+    name: "Supabase",
+    icon: <SupabaseIcon size={"max"} />,
+    alt: "supabase",
   },
 ];
 
@@ -71,9 +81,9 @@ export default function Profile() {
             </h1>
           </div>
         </div>
-        <p className="max-w-[448px] text-xl text-white font-mono text-center">
-          I&apos;m an aspiring frontend developer, who&apos;s looking for a job
-          in the frontend area. below is my skills and proficiency <br />
+        <p className="max-w-[484px] text-xl text-white font-mono text-center">
+          I&apos;m a frontend developer, eager to cooperate and learn more about
+          frontend technology. <br /> I&apos;m especially proficient in:
         </p>
         <div className="flex justify-centern items-center">
           <ul className="flex gap-2 flex-wrap justify-center">
@@ -83,7 +93,7 @@ export default function Profile() {
                   className="w-[68px] h-[68px] text-white text-[10px] rounded-[16px] bg-[#171D25] p-2 flex items-center justify-center font-mono flex-col gap-1"
                   style={{ boxShadow: "inset 0 -2px 3px 0 #178F98" }}
                   key={skill.id}>
-                  <img className="h-[35px]" src={skill.href} alt={skill.alt} />
+                  {skill.icon}
                   <p>{skill.name}</p>
                 </li>
               );
