@@ -9,7 +9,7 @@ import App from "../../App";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path="/" element={<App />} />
+      <Route path="/Portfolio_Main" element={<App />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
