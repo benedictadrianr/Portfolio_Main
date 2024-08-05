@@ -1,11 +1,13 @@
+import Background from "./background";
 import Navbar from "./components/Navbar";
-import Profile from "./components/Profile";
-import Project from "./components/Project";
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
+import Profile from "./pages/Profile";
+import Project from "./pages/Project";
 
 const App = () => {
   return (
     <>
+      <Background />
       <Navbar />
       <Profile />
       <Project />

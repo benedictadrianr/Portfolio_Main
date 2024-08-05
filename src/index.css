@@ -4,6 +4,7 @@
 
 html {
   overflow-x: hidden;
+  color: aliceblue;
 }
 
 .background:hover > .title {
@@ -25,58 +26,18 @@ html {
   background-position: center;
 }
 
-.profile-name {
-  animation: slide 5s ease-in-out infinite forwards;
-  animation-play-state: running;
+.animate-in {
+  animation: animateIn 2s ease both;
 }
 
-@keyframes slide {
-  /* BEN */
-  0% {
-    top: 0px;
-  }
-  10% {
-    top: 0px;
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
 
-  /* RIAN */
-  24% {
-    top: -47px;
-  }
-  25% {
-    top: -46px;
-  }
-  35% {
-    top: -46px;
-  }
-
-  /* ADRIAN */
-  49% {
-    top: -96px;
-  }
-  50% {
-    top: -95px;
-  }
-  60% {
-    top: -95px;
-  }
-
-  /* back to RIAN */
-  74% {
-    top: -45px;
-  }
-  75% {
-    top: -46px;
-  }
-  85% {
-    top: -46px;
-  }
-
-  /* back to BEN */
-  99% {
-    top: 1px;
-  }
-  100% {
-    top: 0px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

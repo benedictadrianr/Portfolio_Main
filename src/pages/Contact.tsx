@@ -1,12 +1,14 @@
-import github from "../img/github.png";
-import instagram from "../img/instagram.png";
-import linkedin from "../img/linkedin.png";
+import {
+  FaGithub as GithubIcon,
+  FaInstagram as InstagramIcon,
+  FaLinkedin as LinkedInIcon,
+} from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div
+    <section
       id="contact"
-      className="bg-[#0D1013] w-screen h-32 flex justify-center items-center flex-col gap-2">
+      className="section-wrapper animate-in w-screen h-screen flex justify-center items-center flex-col gap-2">
       <h1 className="font-mono text-white">Here&apos;s my Contacts!</h1>
       <ul className="flex flex-row gap-2">
         <li>
@@ -14,7 +16,10 @@ export default function Contact() {
             href="https://github.com/rianrich123"
             rel="noreferrer"
             target="_blank">
-            <img className="w-10" src={github} alt="" />
+            <GithubIcon
+              className="hover:text-[#00F7FF] transition-colors ease-in-out duration-200"
+              size={50}
+            />
           </a>
         </li>
         <li>
@@ -22,7 +27,10 @@ export default function Contact() {
             href="https://www.instagram.com/benedictadrianr?igsh=bG9ua3NsNHE1MDFp"
             rel="noreferrer"
             target="_blank">
-            <img className="w-10" src={instagram} alt="" />
+            <InstagramIcon
+              className="hover:text-[#00F7FF] transition-colors ease-in-out duration-200"
+              size={50}
+            />
           </a>
         </li>
         <li>
@@ -30,10 +38,13 @@ export default function Contact() {
             href="https://www.linkedin.com/in/benedictadrianr/"
             rel="noreferrer"
             target="_blank">
-            <img className="w-10" src={linkedin} alt="" />
+            <LinkedInIcon
+              className="hover:text-[#00F7FF] transition-colors ease-in-out duration-200"
+              size={50}
+            />
           </a>
         </li>
       </ul>
-    </div>
+    </section>
   );
 }
