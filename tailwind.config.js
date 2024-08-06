@@ -7,6 +7,9 @@ export default {
         primary: {
           DEFAULT: "#00F7FF",
         },
+        secondary: {
+          DEFAULT: "#171D25",
+        },
       },
     },
   },

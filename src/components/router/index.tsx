@@ -3,8 +3,8 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import NotFound from "../../pages/NotFound";
 import App from "../../App";
+import NotFound from "../../pages/NotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
