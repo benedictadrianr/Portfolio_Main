@@ -27,7 +27,28 @@ html {
 }
 
 .animate-in {
-  animation: animateIn 2s ease both;
+  animation: animateIn 2s ease-in-out both;
+}
+
+.animate-in-right {
+  animation: animateInRight 0.5s ease-in-out both;
+}
+
+@keyframes animateInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateX(5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes animateIn {
@@ -39,5 +60,31 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.arrow-enter {
+  animation: arrowIn 0.3s ease-in-out both;
+}
+
+.arrow-exit {
+  animation: arrowOut 0.3s ease-in-out both;
+}
+
+@keyframes arrowIn {
+  from {
+    transform: translate(-10px, -50%);
+  }
+  to {
+    transform: translate(0px, -50%);
+  }
+}
+
+@keyframes arrowOut {
+  from {
+    transform: translate(0, -50%);
+  }
+  to {
+    transform: translate(10px, -50%);
   }
 }

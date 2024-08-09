@@ -8,9 +8,9 @@ import {
   TbBrandSupabase as SupabaseIcon,
   TbBrandNextjs as NextIcon,
 } from "react-icons/tb";
-import { FlipWords } from "../../components/shared/FlipWords";
+import { FlipWords } from "../../../components/shared/FlipWords";
 import React from "react";
-import Section from "../../components/shared/Section";
+import Section from "../../../components/shared/Section";
 
 const list = [
   {

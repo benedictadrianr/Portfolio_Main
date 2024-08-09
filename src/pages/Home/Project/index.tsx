@@ -1,5 +1,5 @@
-import Section from "../../components/shared/Section";
-import { getProjects } from "../../utils/getProjects";
+import Section from "../../../components/shared/Section";
+import { getProjects } from "../../../utils/getProjects";
 
 const Project = () => {
   const projects = getProjects();

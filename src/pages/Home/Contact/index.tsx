@@ -3,7 +3,7 @@ import {
   FaInstagram as InstagramIcon,
   FaLinkedin as LinkedInIcon,
 } from "react-icons/fa";
-import Section from "../../components/shared/Section";
+import Section from "../../../components/shared/Section";
 
 export default function Contact() {
   return (

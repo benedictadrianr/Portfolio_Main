@@ -8,7 +8,7 @@ const NotFound = () => {
 
   const handleNavigate = (event: MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
-    navigate("/");
+    navigate("/Portfolio_Main/");
   };
   return (
     <div className="w-screen h-screen flex justify-center items-center">

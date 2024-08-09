@@ -1,6 +1,6 @@
-import ExperienceCard from "../../components/Experience/ExperienceCard";
-import Section from "../../components/shared/Section";
-import { getExperience } from "../../utils/getExperience";
+import ExperienceCard from "../../../components/Experience/ExperienceCard";
+import Section from "../../../components/shared/Section";
+import { getExperience } from "../../../utils/getExperience";
 
 const Experience = () => {
   const experiences = getExperience();

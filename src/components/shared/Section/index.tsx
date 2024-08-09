@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 
 type SectionProps = {
   children: ReactNode;
-  id: string;
+  id?: string;
   className?: string;
 };
 

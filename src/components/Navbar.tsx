@@ -26,7 +26,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-black/50 backdrop-blur w-14 h-screen flex flex-col justify-between items-center py-8 fixed left-0  z-50">
+    <nav className="bg-black/50 backdrop-blur w-14 h-screen flex flex-col justify-between items-center py-8 fixed left-0 z-50 animate-in-right">
       <CodeIcon className="w-[25px] h-[25px]" />
       <div className="h-full w-full flex flex-col mt-8 justify-start items-center">
         <ul className="flex flex-col w-full text-white font-mono">
