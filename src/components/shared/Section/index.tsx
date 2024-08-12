@@ -10,7 +10,7 @@ const Section: FC<SectionProps> = ({ children, id, className }) => {
   return (
     <section
       id={id}
-      className={`${className} flex justify-center items-center section-wrapper min-w-screen min-h-screen animate-in`}>
+      className={`${className} flex justify-center items-center section-wrapper min-w-screen min-h-screen animate-in py-28`}>
       {children}
     </section>
   );

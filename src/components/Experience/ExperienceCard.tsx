@@ -42,7 +42,7 @@ const ExperienceCard = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`${containerClassName} cursor-pointer relative w-full py-4 flex flex-col gap-2`}>
-      <div className="flex justify-between items-end">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between ">
         <h2 className="text-2xl font-semibold">{data.companyName}</h2>
         <h3 className="text-primary">
           {convertUnixToMonthYear(data.timeStart)} -{" "}
@@ -54,17 +54,17 @@ const ExperienceCard = ({
       <div>
         <h3 className="text-3xl">{data.jobDesc}</h3>
       </div>
-      <div className="w-3/4">
+      <div className="lg:w-[65%] xl:w-[70%] 2xl:w-3/4">
         <p className="whitespace-pre-wrap">{data.description}</p>
       </div>
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         {data.skills.map((skill) => (
           <SkillCard name={skill} />
         ))}
       </div>
 
       <div
-        className={`absolute right-16 top-1/2 overflow-hidden rounded-md w-[200px] transition-all duration-300 ${
+        className={`absolute right-0 xl:right-16 top-1/2 overflow-hidden rounded-md w-[200px] transition-all duration-300 ${
           hover ? "opacity-100 arrow-enter" : "opacity-0 arrow-exit"
         }`}>
         <img src={data.previewImg} />

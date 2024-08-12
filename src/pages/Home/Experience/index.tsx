@@ -8,7 +8,9 @@ const Experience = () => {
   return (
     <Section id="experience">
       <div className="w-3/4 flex flex-col gap-12">
-        <h1 className="text-6xl w-full">Experiences.</h1>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl w-full">
+          Experiences.
+        </h1>
         <div className="flex flex-col">
           {experiences.map((exp) => (
             <ExperienceCard

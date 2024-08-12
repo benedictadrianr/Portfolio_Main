@@ -69,28 +69,28 @@ const Profile = () => {
   return (
     <Section id="profile">
       <div className="flex flex-col justify-center items-center relative gap-4">
-        <div className="w-[460px] flex justify-start items-center text-white gap-2 font-mono relative text-[48px]">
+        <div className=" w-[280px] lg:w-[470px] flex justify-start items-center text-white gap-2 font-mono relative text-[28px] lg:text-[48px]">
           <h1 className="">Hi 👋, I&apos;m </h1>
           <div>
             <FlipWords words={words} />
           </div>
         </div>
-        <div className="max-w-[700px] text-xl text-white font-mono text-center flex flex-col gap-2">
-          <p className="text-[32px]">
+        <div className="max-w-[350px] sm:max-w-[500px] lg:max-w-[700px] text-white font-mono text-center flex flex-col gap-2">
+          <p className="text-[26px] lg:text-[32px]">
             I&apos;m a <span className="text-primary">Frontend Developer</span>
           </p>
-          <p>
+          <p className="text-[16px] lg:text-[20px]">
             I have spent 1 year studying and improving my skill in web
             development and I&apos;m eager to cooperate and learn more about
             frontend technology. <br /> I&apos;m especially proficient in:
           </p>
         </div>
-        <div className="flex justify-centern items-center">
+        <div className="flex justify-centern items-center max-w-[330px] sm:max-w-fit">
           <ul className="flex gap-2 flex-wrap justify-center">
             {list.map((skill) => {
               return (
                 <li
-                  className="w-[68px] h-[68px] text-white text-[10px] rounded-[16px] bg-secondary p-2 flex items-center justify-center font-mono flex-col gap-1"
+                  className="size-[60px] lg:size-[68px] text-white text-[10px] rounded-[16px] bg-secondary p-2 flex items-center justify-center font-mono flex-col gap-1"
                   style={{ boxShadow: "inset 0 -2px 3px 0 #178F98" }}
                   key={skill.id}>
                   {React.createElement(skill.icon, { size: "max" })}
