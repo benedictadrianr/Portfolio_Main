@@ -36,7 +36,7 @@ const DetailedExperience = () => {
   }, [expId]);
 
   return (
-    <Section>
+    <Section className="py-0">
       {loading ? (
         <div className="animate-spin text-primary w-[50px]">
           <Loader size={"max"} />
@@ -56,18 +56,39 @@ const DetailedExperience = () => {
           <div className="w-full max-h-screen overflow-hidden flex justify-center items-center mb-10">
             <img src={exp.previewImg} className="object-contain" />
           </div>
-          <div className="px-40 flex flex-col gap-8">
-            <div className="max-w-[50%]">
-              <Title className="mb-5">Overview</Title>
-              <Paragraph>{exp.overview}</Paragraph>
+          <div className="px-40 flex flex-col gap-24">
+            <div className="w-full flex items-center gap-6">
+              <div className="w-1/2">
+                <Title className="mb-5">Overview</Title>
+                <Paragraph>{exp.overview}</Paragraph>
+              </div>
+              <img
+                src={exp.overviewImg}
+                alt={`${exp.companyName} overview image`}
+                className="w-1/2 pl-6 object-cover object-center"
+              />
             </div>
-            <div className="max-w-[50%] self-end">
-              <Title className="mb-5 text-end">Highlight</Title>
-              <Paragraph className="text-justify">{exp.highlight}</Paragraph>
+            <div className="w-full flex items-center gap-6">
+              <img
+                src={exp.highlightImg}
+                alt={`${exp.companyName} highlight image`}
+                className="w-1/2 pr-6 object-cover object-center"
+              />
+              <div className="w-1/2">
+                <Title className="mb-5 text-end">Highlight</Title>
+                <Paragraph className="text-end">{exp.highlight}</Paragraph>
+              </div>
             </div>
-            <div className="max-w-[50%]">
-              <Title className="mb-5">What I Learned the Most</Title>
-              <Paragraph>{exp.learnt}</Paragraph>
+            <div className="w-full flex items-center gap-6">
+              <div className="w-1/2">
+                <Title className="mb-5">What I Learned the Most</Title>
+                <Paragraph>{exp.learnt}</Paragraph>
+              </div>
+              <img
+                src={exp.overviewImg}
+                alt={`${exp.companyName} overview image`}
+                className="w-1/2 pl-6 object-cover object-center"
+              />
             </div>
           </div>
         </div>

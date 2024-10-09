@@ -64,10 +64,13 @@ const ExperienceCard = ({
       </div>
 
       <div
-        className={`absolute right-0 xl:right-16 top-1/2 overflow-hidden rounded-md w-[200px] transition-all duration-300 ${
+        className={`absolute right-0 xl:right-16 top-1/2 overflow-hidden rounded-md transition-all duration-300 ${
           hover ? "opacity-100 arrow-enter" : "opacity-0 arrow-exit"
         }`}>
-        <img src={data.previewImg} />
+        <img
+          src={data.previewImg}
+          className="w-[200px] h-[120px] object-cover object-center"
+        />
       </div>
     </div>
   );
