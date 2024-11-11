@@ -85,7 +85,7 @@ const DetailedExperience = () => {
                 <Paragraph>{exp.learnt}</Paragraph>
               </div>
               <img
-                src={exp.overviewImg}
+                src={exp.learntImg}
                 alt={`${exp.companyName} overview image`}
                 className="w-1/2 pl-6 object-cover object-center"
               />
