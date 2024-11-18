@@ -14,5 +14,7 @@ export default defineConfig({
     'process.env': {},
   },
   base: '/Portfolio_Main/',
-  
+  build: {
+    outDir: 'dist',
+  },
 })
