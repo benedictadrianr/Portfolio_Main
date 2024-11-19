@@ -36,7 +36,7 @@ const DetailedExperience = () => {
   }, [expId]);
 
   return (
-    <Section className="py-0">
+    <Section className="!py-0">
       {loading ? (
         <div className="animate-spin text-primary w-[50px]">
           <Loader size={"max"} />
@@ -62,18 +62,22 @@ const DetailedExperience = () => {
                 <Title className="mb-5">Overview</Title>
                 <Paragraph>{exp.overview}</Paragraph>
               </div>
-              <img
-                src={exp.overviewImg}
-                alt={`${exp.companyName} overview image`}
-                className="w-1/2 pl-6 object-cover object-center"
-              />
+              {exp.overviewImg && (
+                <img
+                  src={exp.overviewImg}
+                  alt={`${exp.companyName} overview image`}
+                  className="w-1/2 pl-6 object-cover object-center"
+                />
+              )}
             </div>
-            <div className="w-full flex items-center gap-6">
-              <img
-                src={exp.highlightImg}
-                alt={`${exp.companyName} highlight image`}
-                className="w-1/2 pr-6 object-cover object-center"
-              />
+            <div className="w-full flex justify-end items-center gap-6">
+              {exp.highlightImg && (
+                <img
+                  src={exp.highlightImg}
+                  alt={`${exp.companyName} highlight image`}
+                  className="w-1/2 pr-6 object-cover object-center"
+                />
+              )}
               <div className="w-1/2">
                 <Title className="mb-5 text-end">Highlight</Title>
                 <Paragraph className="text-end">{exp.highlight}</Paragraph>
@@ -84,11 +88,13 @@ const DetailedExperience = () => {
                 <Title className="mb-5">What I Learned the Most</Title>
                 <Paragraph>{exp.learnt}</Paragraph>
               </div>
-              <img
-                src={exp.learntImg}
-                alt={`${exp.companyName} overview image`}
-                className="w-1/2 pl-6 object-cover object-center"
-              />
+              {exp.learntImg && (
+                <img
+                  src={exp.learntImg}
+                  alt={`${exp.companyName} overview image`}
+                  className="w-1/2 pl-6 object-cover object-center"
+                />
+              )}
             </div>
           </div>
         </div>
