@@ -13,8 +13,11 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/Portfolio_Main" element={<App />}>
       <Route index element={<Home />} />
-      <Route path="experience" element={<Experience />} />
-      <Route path="experience/:expId" element={<DetailedExperience />} />
+      <Route path="/Portfolio_Main/experience" element={<Experience />} />
+      <Route
+        path="/Portfolio_Main/experience/:expId"
+        element={<DetailedExperience />}
+      />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
