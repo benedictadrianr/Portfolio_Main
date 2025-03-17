@@ -7,7 +7,8 @@ type ParagraphProps = {
 
 const Paragraph: FC<ParagraphProps> = ({ children, className }) => {
   return (
-    <p className={`${className} whitespace-pre-wrap text-justify text-xl`}>
+    <p
+      className={`${className} whitespace-pre-wrap text-justify text-sm lg:text-xl`}>
       {children}
     </p>
   );

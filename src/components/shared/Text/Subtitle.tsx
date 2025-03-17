@@ -6,7 +6,7 @@ type SubtitleProps = {
 };
 
 const Subtitle: FC<SubtitleProps> = ({ children, className }) => {
-  return <div className={`${className} text-2xl`}>{children}</div>;
+  return <div className={`${className} text-xl lg:text-2xl`}>{children}</div>;
 };
 
 export default Subtitle;

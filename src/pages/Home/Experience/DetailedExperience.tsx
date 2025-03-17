@@ -94,7 +94,7 @@ const DetailedExperience = () => {
                   />
                 </FadeIn>
               )}
-              <div className="md:w-1/2">
+              <div className="w-full md:w-1/2">
                 <FadeIn>
                   <Title className="mb-5">Highlight</Title>
                 </FadeIn>
@@ -110,7 +110,7 @@ const DetailedExperience = () => {
               </div>
             </div>
             <div className="w-full flex flex-col md:flex-row items-center gap-6">
-              <div className="md:w-1/2">
+              <div className="w-full md:w-1/2">
                 <FadeIn>
                   <Title className="mb-5">What I Learned the Most</Title>
                 </FadeIn>
