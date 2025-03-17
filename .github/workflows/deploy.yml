@@ -14,7 +14,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     name: Push to Release Branch
     runs-on: ubuntu-latest
     steps:
