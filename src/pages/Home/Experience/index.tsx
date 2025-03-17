@@ -1,10 +1,12 @@
+import { LuLoader2 } from "react-icons/lu";
 import ExperienceCard from "../../../components/Experience/ExperienceCard";
 import FadeIn from "../../../components/shared/FadeIn";
 import Section from "../../../components/shared/Section";
-import { getExperience } from "../../../utils/getExperience";
+import { useData } from "../../../DataProvider";
+import Title from "../../../components/shared/Text/Title";
 
 const Experience = () => {
-  const experiences = getExperience();
+  const { experiences } = useData();
 
   return (
     <Section id="experience">
@@ -15,11 +17,19 @@ const Experience = () => {
           </h1>
         </FadeIn>
         <ul className="flex flex-col gap-7">
-          {experiences.map((exp) => (
-            <li key={exp.id}>
-              <ExperienceCard data={exp} />
-            </li>
-          ))}
+          {experiences.loading ? (
+            <div className="animate-spin text-primary w-[50px]">
+              <LuLoader2 />
+            </div>
+          ) : experiences.data ? (
+            experiences.data.map((exp) => (
+              <li key={exp.id}>
+                <ExperienceCard data={exp} />
+              </li>
+            ))
+          ) : (
+            <Title>{experiences.error}</Title>
+          )}
         </ul>
       </div>
     </Section>
