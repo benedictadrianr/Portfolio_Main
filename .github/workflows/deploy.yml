@@ -9,7 +9,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Sets the GITHUB_TOKEN permissions to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -28,34 +28,21 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v4
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact
-          path: ./dist
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v3
+      - name: Replace URL
+        uses: jacobtomlinson/gha-find-replace@v2
         with:
-          node-version: 18
-          cache: "npm"
-      - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
+          find: "http://localhost:8000"
+          replace: "https://myPage.github.io"
+          regex: false
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v1
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
-          path: "./dist"
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: releases/v4
-          folder: .
-          clean: false
-          single-commit: true
+          # Upload entire repository
+          path: "."
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@main
