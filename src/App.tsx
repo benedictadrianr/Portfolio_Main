@@ -3,7 +3,7 @@ import Background from "./background";
 
 const App = () => {
   return (
-    <main className="text-cyan-50 min-w-screen min-h-screen">
+    <main className="text-cyan-50">
       <Background />
       <Outlet />
     </main>

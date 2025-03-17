@@ -31,7 +31,7 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
 
   return (
     <nav
-      className={`${className} bg-black/50 backdrop-blur w-8 lg:w-14 h-screen flex flex-col justify-between items-center py-8 z-50 animate-in-right`}>
+      className={`${className} bg-black/50 backdrop-blur w-8 lg:w-14 h-screen flex flex-col justify-between items-center py-8 z-50`}>
       <CodeIcon className="w-[25px] h-[25px]" />
       <div className="h-full w-full flex flex-col mt-8 justify-start items-center">
         <ul className="flex flex-col w-full text-white font-mono">

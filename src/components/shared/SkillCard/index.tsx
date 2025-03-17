@@ -1,8 +1,8 @@
 const SkillCard = ({ name }: { name: string }) => {
   return (
     <div
-      style={{ boxShadow: "inset 0 -2px 3px 0 #178f98" }}
-      className="bg-secondary rounded-md py-[4px] px-[6px]">
+      style={{ boxShadow: "0 0 10px 0 #0CB0BC" }}
+      className="bg-primary-600 rounded-full flex items-center justify-center py-[4px] px-[16px]">
       {name}
     </div>
   );

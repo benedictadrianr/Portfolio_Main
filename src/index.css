@@ -26,43 +26,6 @@ html {
   background-position: center;
 }
 
-.animate-in {
-  animation: animateIn 2s ease-in-out both;
-}
-
-.animate-in-right {
-  animation: animateInRight 0.5s ease-in-out both;
-}
-
-@keyframes animateInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-10px);
-  }
-
-  50% {
-    opacity: 0.5;
-    transform: translateX(5px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes animateIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .arrow-enter {
   animation: arrowIn 0.3s ease-in-out both;
 }

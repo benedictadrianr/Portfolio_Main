@@ -1,4 +1,5 @@
 import ExperienceCard from "../../../components/Experience/ExperienceCard";
+import FadeIn from "../../../components/shared/FadeIn";
 import Section from "../../../components/shared/Section";
 import { getExperience } from "../../../utils/getExperience";
 
@@ -7,18 +8,19 @@ const Experience = () => {
 
   return (
     <Section id="experience">
-      <div className="w-3/4 flex flex-col gap-12">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl w-full">
-          Experiences.
-        </h1>
-        <div className="flex flex-col">
+      <div className="w-[90%] md:w-3/4 flex flex-col gap-12">
+        <FadeIn>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl w-full">
+            Experiences.
+          </h1>
+        </FadeIn>
+        <ul className="flex flex-col gap-7">
           {experiences.map((exp) => (
-            <ExperienceCard
-              data={exp}
-              containerClassName="border-white border-b last:border-b-0"
-            />
+            <li key={exp.id}>
+              <ExperienceCard data={exp} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </Section>
   );
