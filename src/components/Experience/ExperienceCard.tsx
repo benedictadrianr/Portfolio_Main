@@ -2,6 +2,7 @@ import { useState } from "react";
 import SkillCard from "../shared/SkillCard";
 import { Tables } from "../../types/supabase";
 import FadeIn from "../shared/FadeIn";
+import { useNavigate } from "react-router";
 
 type DateTimeFormatOptions = {
   year?: "numeric" | "2-digit";
@@ -15,6 +16,7 @@ const ExperienceCard = ({
   data: Tables<"Experience">;
   containerClassName?: string;
 }) => {
+  const navigate = useNavigate();
   const [hover, setHover] = useState(false);
   const convertUnixToMonthYear = (unix: number) => {
     const date = new Date(unix * 1000);
@@ -36,9 +38,10 @@ const ExperienceCard = ({
         key={data.id}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        href={`experience/${data.id}`}
+        onClick={() => navigate(`experience/${data.id}`)}
+        // href={`experience/${data.id}`}
         rel="noreferrer"
-        className={`${containerClassName} overflow-hidden relative w-full flex flex-col border border-primary-700 hover:border-primary-500 transition-colors ease-in-out duration-300 rounded-2xl bg-black bg-opacity-20`}>
+        className={`${containerClassName} cursor-pointer overflow-hidden relative w-full flex flex-col border border-primary-700 hover:border-primary-500 transition-colors ease-in-out duration-300 rounded-2xl bg-black bg-opacity-20`}>
         <div className="flex flex-col md:flex-row gap-2 items-start md:items-center w-full lg:w-fit bg-primary-700 py-[10px] px-[20px] rounded-tl-2xl lg:rounded-tr-none lg:rounded-br-2xl rounded-tr-2xl rounded-br-none">
           <h2 className="text-xl font-semibold">
             {data.companyName} | {data.jobType}
