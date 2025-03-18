@@ -73,7 +73,10 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
   }, []);
 
   const fetchExperience = async () => {
-    const { error, data } = await supabase.from("Experience").select();
+    const { error, data } = await supabase
+      .from("Experience")
+      .select()
+      .order("created_at", { ascending: false });
     if (error) {
       setExperiences((prev) => ({
         ...prev,
