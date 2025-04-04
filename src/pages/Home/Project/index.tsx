@@ -1,58 +1,40 @@
-import { LuLoader, LuLoader2 } from "react-icons/lu";
-import FadeIn from "../../../components/shared/FadeIn";
-import ProjectCard from "../../../components/shared/ProjectCard";
-import Section from "../../../components/shared/Section";
-import Title from "../../../components/shared/Text/Title";
-import { useData } from "../../../DataProvider";
+import FadeIn from "../../../shared/components/FadeIn";
+import Section from "../../../shared/components/Section";
+import ProjectCard from "../../../features/project/component/ProjectCard";
+import { useData } from "../../../shared/provider";
 
 const Project = () => {
-  const { projects, compProjects } = useData();
+  const { personalProjects, compProjects } = useData();
   return (
     <Section id="project">
-      <div className="w-[90%] md:w-3/4 flex flex-col gap-12">
+      <div className="max-w-[900px] w-[90%] md:w-3/4 flex flex-col gap-12">
         <FadeIn>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl w-full">
-            Company Projects.
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl w-full">
+            Company Projects
           </h1>
         </FadeIn>
-        <ul className="w-full mx-auto grid grid-cols-1 gap-8 xl:grid-cols-2 ">
-          {compProjects.loading ? (
-            <div className="animate-spin text-primary w-[50px]">
-              <LuLoader2 />
-            </div>
-          ) : compProjects.data ? (
-            compProjects.data.map((project) => {
-              return (
-                <li key={project.id}>
-                  <ProjectCard project={project} />
-                </li>
-              );
-            })
-          ) : (
-            <Title>{compProjects.error}</Title>
-          )}
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
+          {compProjects.map((project) => {
+            return (
+              <li key={project.id}>
+                <ProjectCard size="m" project={project} />
+              </li>
+            );
+          })}
         </ul>
         <FadeIn>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl w-full">
-            Personal Projects.
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl w-full">
+            Personal Projects
           </h1>
         </FadeIn>
-        <ul className="w-full mx-auto grid grid-cols-1 gap-8 xl:grid-cols-2 ">
-          {projects.loading ? (
-            <div className="animate-spin text-primary w-[50px]">
-              <LuLoader />
-            </div>
-          ) : projects.data ? (
-            projects.data.map((project) => {
-              return (
-                <li key={project.id}>
-                  <ProjectCard project={project} />
-                </li>
-              );
-            })
-          ) : (
-            <Title>{projects.error}</Title>
-          )}
+        <ul className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:grid-cols-3 ">
+          {personalProjects.map((project) => {
+            return (
+              <li key={project.id}>
+                <ProjectCard project={project} />
+              </li>
+            );
+          })}
         </ul>
       </div>
     </Section>

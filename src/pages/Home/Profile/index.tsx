@@ -8,10 +8,10 @@ import {
   TbBrandSupabase as SupabaseIcon,
   TbBrandNextjs as NextIcon,
 } from "react-icons/tb";
-import { FlipWords } from "../../../components/shared/FlipWords";
+import { FlipWords } from "../../../shared/components/FlipWords";
 import React from "react";
-import Section from "../../../components/shared/Section";
-import FadeIn from "../../../components/shared/FadeIn";
+import Section from "../../../shared/components/Section";
+import FadeIn from "../../../shared/components/FadeIn";
 
 const list = [
   {

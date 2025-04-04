@@ -1,35 +1,27 @@
-import { LuLoader2 } from "react-icons/lu";
-import ExperienceCard from "../../../components/Experience/ExperienceCard";
-import FadeIn from "../../../components/shared/FadeIn";
-import Section from "../../../components/shared/Section";
-import { useData } from "../../../DataProvider";
-import Title from "../../../components/shared/Text/Title";
+import FadeIn from "../../../shared/components/FadeIn";
+import Section from "../../../shared/components/Section";
+import ExperienceCard from "../../../features/experience/component/ExperienceCard";
+import { useData } from "../../../shared/provider";
 
 const Experience = () => {
   const { experiences } = useData();
 
   return (
     <Section id="experience">
-      <div className="w-[90%] md:w-3/4 flex flex-col gap-12">
+      <div className="max-w-[900px] w-[90%] md:w-3/4 flex flex-col gap-12">
         <FadeIn>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl w-full">
-            Experiences.
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl w-full">
+            Experiences
           </h1>
         </FadeIn>
         <ul className="flex flex-col gap-7">
-          {experiences.loading ? (
-            <div className="animate-spin text-primary w-[50px]">
-              <LuLoader2 />
-            </div>
-          ) : experiences.data ? (
-            experiences.data.map((exp) => (
+          {experiences
+            .sort((a, b) => b.timeStart.getTime() - a.timeStart.getTime())
+            .map((exp) => (
               <li key={exp.id}>
                 <ExperienceCard data={exp} />
               </li>
-            ))
-          ) : (
-            <Title>{experiences.error}</Title>
-          )}
+            ))}
         </ul>
       </div>
     </Section>

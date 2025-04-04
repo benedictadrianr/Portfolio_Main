@@ -1,0 +1,20 @@
+export type ExperienceType = {
+    id: number;
+    companyName: string;
+    jobDesc: string;
+    jobType: "Internship" | "Contract" | "Full Time";
+    timeStart: Date;
+    timeFinish: Date;
+    description: string;
+    skills: string[];
+    previewImg: string;
+    overview: string;
+    overviewImg: string;
+    highlight: string;
+    highlightImg: string;
+    learnt: string;
+    learntImg: string;
+    previewBullet: string[];
+    highlightPoint: string[];
+    learntPoint: string[];
+};

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import NotFoundIcon from "../../img/404.png";
+import NotFoundIcon from "/img/404.png";
 import { MouseEvent } from "react";
-import Button from "../../components/shared/Button";
+import { Button } from "../../shared/components/Button";
 
 const NotFound = () => {
   const navigate = useNavigate();
