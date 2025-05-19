@@ -1,6 +1,6 @@
 import { projectType } from "../../type";
 
-import weddingbg from "/img/project/personal/background/bmi.jpg";
+import weddingbg from "/img/project/personal/background/undangan-pernikahan-digital.png";
 import wedding1 from "/img/project/personal/carousel/wedding1.png";
 import wedding2 from "/img/project/personal/carousel/wedding2.png";
 import wedding3 from "/img/project/personal/carousel/wedding3.png";
